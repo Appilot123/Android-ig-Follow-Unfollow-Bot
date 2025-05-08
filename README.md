@@ -2,6 +2,8 @@
 
 **Android-ig** is a high-performance **Instagram follow/unfollow automation bot** built specifically for **Android devices**. It allows users to automate bulk follow and unfollow tasks across multiple accounts while minimizing the risk of Instagram blocks. Designed for real-device execution, the bot operates through a custom APK and integrates with a centralized web dashboard for task scheduling and monitoring.
 
+We Offer top-quality, affordable software development services to automate any social media platfom app.
+
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/480b9ec7-05ac-4ea8-b3f7-6005335fbc36"
@@ -23,12 +25,8 @@
 ### 🔁 Advanced Follow & Unfollow Logic
 Includes multiple follow strategies and intelligent, customizable unfollow modes.
 
-##
-
 ### 📱 Built for Android phones and emulators
 Runs directly on real devices or emulators with cloud-based task control and automated handling.
-
-##
 
 ### 🧠 Optimized for performance, stability, and stealth
 Includes human-like behavior, scroll recovery, and anti-block safeguards.
@@ -72,6 +70,9 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 </div>
 
 <div align="center">
+<strong> Have a Custom Project in Mind please Contact?</strong>
+
+<div align="center">
   <a href="mailto:support@appilot.app">
   <img
     alt="Email"
@@ -91,41 +92,36 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 </a>
 <span>
 
-
-<strong>📩 Have a Custom Project in Mind please Contact?</strong>
-</div>
+<div align="left">
 
 ## ⚙️Features
 
 | Feature                           | Description                                                                 |
 |-----------------------------------|-----------------------------------------------------------------------------|
-| **Android-Based Execution**       | Runs directly on Android phones or emulators. |
-| **Follow Methods**    | Includes hashtag, explore, suggested users, mutuals, and profile followers. |
-| **Unfollow Modes**    | Smart unfollow all, whitelist-except, and last-followed-only modes. |
-| **Multi-Device Scaling**   | Deploy the bot across 10, 20, or 50+ real devices. |
-| **Web Dashboard**      | Cloud-based control center for all devices and task management. |
-| **One-Time & Daily Schedules**    | Create daily recurring jobs or one-time scheduled runs per device. |
+| **Android-Based Execution**       | Runs directly on Android phones or emulators.                               |
+| **Follow Methods**                | Includes hashtag, explore, suggested users, mutuals, and profile followers. |
+| **Unfollow Modes**                | Smart unfollow all, whitelist-except, and last-followed-only modes.         |
+| **Multi-Device Scaling**          | Deploy the bot across 10, 20, or 50+ real devices.                          |
+| **Web Dashboard**                 | Cloud-based control center for all devices and task management.             |
+| **One-Time & Daily Schedules**    | Create daily recurring jobs or one-time scheduled runs per device.          |
 | **Anti-Block Controls**           | Human-like delays, randomized actions, and session limits to reduce detection. |
-| **Accessibility Auto-Fix**              | Automatically re-enables Android accessibility service if reset. |
-| **Scroll Logic Recovery**     | Handles empty lists, Instagram UI changes, and infinite scrolling issues. |
-| **Task Replacement**         | Prevents task duplication by overwriting old schedules. |
-| **In-App Logs & Status**         | Track success, failure, and device connection logs from the home screen. |
-| **AI Filter (Planned)**       | Experimental logic to skip business/brand accounts during unfollow. |
-| **Offline Task Queuing (Coming Soon)**      | Tasks can be queued when device is temporarily offline. |
+| **Accessibility Auto-Fix**        | Automatically re-enables Android accessibility service if reset.            |
+| **Scroll Logic Recovery**         | Handles empty lists, Instagram UI changes, and infinite scrolling issues.   |
+| **Task Replacement**              | Prevents task duplication by overwriting old schedules.                     |
+| **In-App Logs & Status**          | Track success, failure, and device connection logs from the home screen.    |
+| **AI Filter (Planned)**           | Experimental logic to skip business/brand accounts during unfollow.         |
+| **Offline Task Queuing (Coming Soon)** | Tasks can be queued when device is temporarily offline.                 |
 
+</div>
+
+<div align="left">
 
 ### 📊 Key Stats
 - Deployed on 150+ Android devices
 - Used to manage over 2000 Instagram accounts
 - Sustains <1% block rate with proper cooldown and scheduling
 
-##
-### 🎬 Demo & Screenshots
-📹 [Demo Video](https://youtu.be/csCvtgMORN8?si=KYi-di5ZWGwpLteb)
 
-📷 Screenshots (coming Soon)
-
-##
 ### 🧠 Built by Appilot
 This bot is developed and maintained by the team behind [Appilot](https://www.appilot.com) — a powerful automation platform built for real mobile devices (Android & iOS) and emulators.
 Appilot powers automation for over 70,000 devices, enabling safe, scalable control over Instagram, Reddit, TikTok, and more — all without ADB or wires. Our web-based dashboard lets you automate your devices from anywhere, anytime.

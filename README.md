@@ -125,5 +125,6 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 ### 🧠 Built by Appilot
 This bot is developed and maintained by the team behind [Appilot](https://www.appilot.com) — a powerful automation platform built for real mobile devices (Android & iOS) and emulators.
 Appilot powers automation for over 70,000 devices, enabling safe, scalable control over Instagram, Reddit, TikTok, and more — all without ADB or wires. Our web-based dashboard lets you automate your devices from anywhere, anytime.
+
 We are a professional automation team offering custom mobile bot development for Instagram and other platforms, using real Android/iOS devices and emulators, just real results.
 

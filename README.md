@@ -85,7 +85,7 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
   />
   <code>Book a 30-minute Call</code>
 </a>
-<span> ┃ </span>
+<span>
 
 
 <strong>📩 Have a Custom Project in Mind please Contact?</strong>

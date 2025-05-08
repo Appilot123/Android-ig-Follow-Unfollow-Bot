@@ -117,7 +117,6 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 <div align="left">
 
 ### 📊 Key Stats
-- Deployed on 150+ Android devices
 - Used to manage over 2000 Instagram accounts
 - Sustains <1% block rate with proper cooldown and scheduling
 

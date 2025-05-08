@@ -102,7 +102,7 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 | **Android-Based Execution**       | Runs directly on Android phones or emulators. |
 | **Follow Methods**    | Includes hashtag, explore, suggested users, mutuals, and profile followers. |
 | **Unfollow Modes**    | Smart unfollow all, whitelist-except, and last-followed-only modes. |
-| **Multi-Device Scaling**   | Deploy the bot across 10, 20, or 50+ real devices.. |
+| **Multi-Device Scaling**   | Deploy the bot across 10, 20, or 50+ real devices. |
 | **Web Dashboard**      | Cloud-based control center for all devices and task management. |
 | **One-Time & Daily Schedules**    | Create daily recurring jobs or one-time scheduled runs per device. |
 | **Anti-Block Controls**           | Human-like delays, randomized actions, and session limits to reduce detection. |

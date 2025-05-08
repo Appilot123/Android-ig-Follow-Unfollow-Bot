@@ -11,13 +11,13 @@
   
 <div align="center">
   <a href="https://youtu.be/csCvtgMORN8?si=_bu5rPxWCobUaCmH">
-    <img
-      alt="Full Video Demo Available on Youtube"
-      width="25px"
-      src="https://github.com/user-attachments/assets/6d134d1d-2a93-4cba-a855-cead4a6f76a4"
-    />
-    <code>Full Video Demo Available on Youtube</code>
-  </a>
+  <img
+    alt="Full Video Demo Available on Youtube"
+    width="25px"
+    src="https://github.com/user-attachments/assets/c685ef52-2bdd-464c-bd60-cc6e34e8e867"
+  />
+  <code>Full Video Demo Available on Youtube</code>
+</a>
 </div>
 
 ### 🔁 Advanced Follow & Unfollow Logic

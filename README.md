@@ -20,13 +20,17 @@
   </a>
 </div>
 
-## 🔁 Advanced Follow & Unfollow Logic
+### 🔁 Advanced Follow & Unfollow Logic
 Includes multiple follow strategies and intelligent, customizable unfollow modes.
 
-## 📱 Built for Android phones and emulators
+##
+
+### 📱 Built for Android phones and emulators
 Runs directly on real devices or emulators with cloud-based task control and automated handling.
 
-## 🧠 Optimized for performance, stability, and stealth
+##
+
+### 🧠 Optimized for performance, stability, and stealth
 Includes human-like behavior, scroll recovery, and anti-block safeguards.
 
 <div align="center">
@@ -69,13 +73,13 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 
 <div align="center">
   <a href="mailto:support@appilot.app">
-    <img
-      alt="Email"
-      width="30px"
-      src="https://github.com/user-attachments/assets/5394523f-2b93-42f9-9c67-344afccdeeee"
-    />
-    <code>support@appilot.app</code>
-  </a>
+  <img
+    alt="Email"
+    width="30px"
+    src="https://github.com/user-attachments/assets/91c8d428-32b7-4be0-91fa-2e42c902b5b8"
+  />
+  <code>support@appilot.app</code>
+</a>
   &nbsp;&nbsp;
   <a href="https://cal.com/app-pilot-m8i8oo/30min">
   <img
@@ -110,19 +114,19 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 | **Offline Task Queuing (Coming Soon)**      | Tasks can be queued when device is temporarily offline. |
 
 
-## 📊 Key Stats
+### 📊 Key Stats
 - Deployed on 150+ Android devices
 - Used to manage over 2000 Instagram accounts
 - Sustains <1% block rate with proper cooldown and scheduling
 
-
-## 🎬 Demo & Screenshots
+##
+### 🎬 Demo & Screenshots
 📹 [Demo Video](https://youtu.be/csCvtgMORN8?si=KYi-di5ZWGwpLteb)
 
 📷 Screenshots (coming Soon)
 
-
-## 🧠 Built by Appilot
+##
+### 🧠 Built by Appilot
 This bot is developed and maintained by the team behind [Appilot](https://www.appilot.com) — a powerful automation platform built for real mobile devices (Android & iOS) and emulators.
 Appilot powers automation for over 70,000 devices, enabling safe, scalable control over Instagram, Reddit, TikTok, and more — all without ADB or wires. Our web-based dashboard lets you automate your devices from anywhere, anytime.
 We are a professional automation team offering custom mobile bot development for Instagram and other platforms, using real Android/iOS devices and emulators, just real results.

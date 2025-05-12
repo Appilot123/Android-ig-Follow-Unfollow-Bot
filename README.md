@@ -40,7 +40,7 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
 
 
 <div align="center">
-  <a href="https://appilot.app/">
+  <a href="https://t.me/devpilot1">
     <img
       alt="Website"
       width="25px"

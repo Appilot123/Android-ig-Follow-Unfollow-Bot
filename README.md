@@ -2,8 +2,7 @@
 
 **Android-ig** is a high-performance **Instagram follow/unfollow automation bot** built specifically for **Android devices**. It allows users to automate bulk follow and unfollow tasks across multiple accounts while minimizing the risk of Instagram blocks. Designed for real-device execution, the bot operates through a custom APK and integrates with a centralized web dashboard for task scheduling and monitoring.
 
-We’re the team behind Appilot. We’ve helped hundreds of businesses automate their social media with custom bots and automations, smart behavior simulations, and plug-and-play solutions. Our pricing is flexible; we offer competitive flat rates or performance-based options depending on your goals. 
-
+We’re the team behind Appilot. We are a software development agency who helped hundreds of businesses automate their social media with custom bots and automations, smart behavior simulations, and plug-and-play solutions. Our pricing is flexible; we offer competitive flat rates as well as hourly rates for fixed projects.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/480b9ec7-05ac-4ea8-b3f7-6005335fbc36"

@@ -58,7 +58,9 @@ Includes human-like behavior, scroll recovery, and anti-block safeguards.
     <code>Join Our Server</code>
   </a>
   &nbsp;&nbsp;
-  <a href="https://t.me/appilotdev">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://t.me/devpilot1">
     <img
       alt="Contact us"
       width="30px"

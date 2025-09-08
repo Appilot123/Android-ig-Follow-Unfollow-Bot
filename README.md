@@ -24,10 +24,10 @@ We’re the team behind Appilot. We are a software development agency who helped
 ### 🔁 Advanced Follow & Unfollow Logic
 Includes multiple follow strategies and intelligent, customizable unfollow modes.
 
-### 📱 Built for Android phones and emulators
+###  Built for Android phones and emulators
 Runs directly on real devices or emulators with cloud-based task control and automated handling.
 
-### 🧠 Optimized for performance, stability, and stealth
+### Optimized for performance, stability, and stealth
 Includes human-like behavior, scroll recovery, and anti-block safeguards.
 
 <div align="center">

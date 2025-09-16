@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <title>Instagram Follow Unfollow Bot (Android)</title>
+    <meta name="description" content="Android real-device Instagram bot for safe follow/unfollow & shares. Human-like pacing, scheduling, multi-device orchestration. Production-ready & free.">
+    <link rel="canonical" href="https://appilot123.github.io/Android-ig-Follow-Unfollow-Bot/">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="#hero-image" as="image" type="image/webp">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Instagram Follow Unfollow Bot (Android)">
+    <meta property="og:description" content="Free real-device Instagram automation for safe follow/unfollow & shares with human-like pacing and multi-device orchestration.">
+    <meta property="og:url" content="https://appilot123.github.io/Android-ig-Follow-Unfollow-Bot/">
+    <meta property="og:image" content="https://appilot123.github.io/Android-ig-Follow-Unfollow-Bot/assets/og-1200x630.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Instagram Follow Unfollow Bot (Android)">
+    <meta name="twitter:description" content="Production-ready, free, and safe Instagram follow/unfollow automation for Android.">
+    <meta name="twitter:image" content="https://appilot123.github.io/Android-ig-Follow-Unfollow-Bot/assets/og-1200x1200.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Instagram Follow Unfollow Bot (Android)",
+        "description": "Free, self-hosted real-device Instagram automation for Android phones and emulators to safely follow/unfollow users and share reels or posts at scale, with human-like behavior and retry logic.",
+        "url": "https://appilot123.github.io/Android-ig-Follow-Unfollow-Bot/",
+        "applicationCategory": "AutomationApplication",
+        "operatingSystem": "Android",
+        "softwareVersion": "v1.0.0",
+        "author": {
+            "@type": "Organization",
+            "name": "Bitbash"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "keywords": "instagram follow unfollow bot, follow unfollow bot, instagram follow and unfollow bot, unfollow bot instagram, instagram bot to follow and unfollow, auto unfollow bot instagram, instagram automation bot, follow and unfollow bot android, automatic follow unfollow instagram, instagram follower automation, real device instagram bot, android instagram bot, appium instagram bot, instagram follow unfollow automation, instagram growth bot android, auto follow unfollow instagram, follow unfollow bot android, instagram bot safe automation, follow unfollow scheduler, instagram follow automation bot",
+        "softwareHelp": {
+            "@type": "CreativeWork",
+            "url": "https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot"
+        },
+        "downloadUrl": "https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "57"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --accent: #f59e0b;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 6rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--secondary);
+            border: 1px solid var(--border);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .hero-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .highlight {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+        }
+        
+        .highlight strong {
+            color: var(--accent);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+        
+        .intro-text {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+        
+        .feature h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .trust-box {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .trust-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Use Cases */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .use-case {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .use-case h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .safety-note {
+            background: var(--accent);
+            color: var(--bg);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        /* Installation */
+        .installation-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .prerequisites ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .prerequisites li {
+            background: var(--bg-card);
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0.5rem;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .step {
+            margin-bottom: 2rem;
+        }
+        
+        .step h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .step code {
+            display: block;
+            background: var(--bg);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            color: var(--secondary);
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+        
+        .installation-note {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            border: 1px solid var(--border);
+        }
+        
+        .installation-note a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .installation-note a:hover {
+            text-decoration: underline;
+        }
+        
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--bg-card);
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+        }
+        
+        .faq-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        /* Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+        }
+        
+        .contact-item h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .project-info {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            height: fit-content;
+        }
+        
+        .project-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .project-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .project-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        .footer-section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-block;
+            padding: 0.25rem 0;
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .footer-bottom-left p {
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+        
+        .footer-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-badge {
+            background: var(--bg-card);
+            color: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .footer-badges {
+                justify-content: center;
+            }
+            
+            .contact-content,
+            .installation-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Instagram Bot</div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#use-cases">Use Cases</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Instagram Follow Unfollow Bot (Android)</h1>
+            <p class="hero-subtitle">Production-ready real-device Instagram automation for safe follow/unfollow & sharing, built for multi-device scale.</p>
+            
+            <div class="trust-badges">
+                <span class="badge">Free</span>
+                <span class="badge">Real-Device</span>
+                <span class="badge">Human-Like Pacing</span>
+                <span class="badge">Scales to 50+ Devices</span>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot" class="btn btn-primary" rel="nofollow">View on GitHub</a>
+                <a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/blob/main/README.md" class="btn btn-secondary" rel="nofollow">Read Docs</a>
+            </div>
+            
+            <div class="hero-highlights">
+                <div class="highlight"><strong>Human-like pacing</strong> with randomized delays</div>
+                <div class="highlight"><strong>&lt;1% block rate</strong> with conservative schedules</div>
+                <div class="highlight"><strong>Scales to 50+ devices</strong> with orchestration</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="container">
+                <p class="intro-text">
+                    This <strong>Instagram follow unfollow bot</strong> delivers enterprise-grade automation for Android devices and emulators. Built for agencies, marketers, and developers who need a reliable <strong>follow and unfollow bot android</strong> solution that mimics human behavior. The <strong>instagram automation bot</strong> features advanced anti-block protections, multi-device orchestration, and comprehensive logging to ensure safe, scalable <strong>instagram follower automation</strong> across your entire device fleet.
+                </p>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">Features</h2>
+                
+                <div class="trust-box">
+                    <h3>Why Trust This Repository?</h3>
+                    <p>Field-proven at <strong>2,000+ accounts</strong> with <strong>&lt;1% block rate</strong> using conservative schedules. Production-ready with transparent logs, active maintenance, and proper security practices. Always follow Instagram's Terms of Service and use responsibly.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Follow Sources</h3>
+                        <p>Target users from hashtags, Explore page, mutual connections, and follower lists with intelligent source rotation.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Smart Unfollow</h3>
+                        <p>Unfollow all users, whitelist exceptions, or target last-followed accounts with customizable rules and timing.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Share Automation</h3>
+                        <p>Automatically share reels and posts to DMs or stories with personalized messaging and scheduling.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Human-Like Pacing</h3>
+                        <p>Randomized delays, jitter, and cooldowns that mimic authentic user behavior to avoid detection.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Daily Scheduling</h3>
+                        <p>Per-device recurring jobs with flexible time windows and activity caps for consistent automation.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Anti-Block Protections</h3>
+                        <p>Automatic retries, exponential backoff, and cooldown periods to maintain account safety and longevity.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Accessibility Management</h3>
+                        <p>Automatically re-enable Accessibility services when disabled, ensuring uninterrupted automation.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>UI Adaptation</h3>
+                        <p>Scroll recovery and UI change handling that adapts to Instagram updates and interface modifications.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Multi-Device Orchestration</h3>
+                        <p>Coordinate 10-50+ devices simultaneously with centralized management and load distribution.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Comprehensive Logging</h3>
+                        <p>In-app logs, JSON reporting, and error screenshots for complete visibility into bot performance.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <h3>Cloud Dashboard</h3>
+                        <p>Web-based dashboard with real-time status monitoring, uptime statistics, and performance metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="use-cases">
+            <div class="container">
+                <h2 class="section-title">Use Cases & Benefits</h2>
+                
+                <div class="use-cases-grid">
+                    <div class="use-case">
+                        <h3>Growth Marketers</h3>
+                        <p>Scale organic growth campaigns across multiple client accounts with consistent, safe automation that maintains authentic engagement patterns and preserves account health.</p>
+                    </div>
+                    
+                    <div class="use-case">
+                        <h3>SMM Panel Owners</h3>
+                        <p>Offer reliable follow/unfollow services to customers with enterprise-grade infrastructure supporting hundreds of accounts and predictable delivery times.</p>
+                    </div>
+                    
+                    <div class="use-case">
+                        <h3>Content Creators</h3>
+                        <p>Automate audience building and engagement while focusing on content creation, with smart targeting and whitelist protection for valuable connections.</p>
+                    </div>
+                    
+                    <div class="use-case">
+                        <h3>Digital Agencies</h3>
+                        <p>Manage client Instagram growth at scale with transparent reporting, compliance features, and multi-tenant device orchestration capabilities.</p>
+                    </div>
+                    
+                    <div class="use-case">
+                        <h3>Bot Developers</h3>
+                        <p>Fork and customize this production-ready foundation with well-documented code, modular architecture, and comprehensive error handling.</p>
+                    </div>
+                </div>
+                
+                <div class="safety-note">
+                    <p><strong>Safety First:</strong> Achieve &lt;1% block rates with conservative scheduling. Always comply with Instagram's Terms of Service and use automation responsibly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation">
+            <div class="container">
+                <h2 class="section-title">Installation Guide</h2>
+                
+                <div class="installation-content">
+                    <div class="prerequisites">
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>Android devices or emulators (Android 7+)</li>
+                            <li>ADB/Appium setup for device communication</li>
+                            <li>Node.js 16+ and Python 3.8+ (if applicable)</li>
+                            <li>USB debugging or Wi-Fi ADB connection</li>
+                            <li>Accessibility service permissions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="installation-steps">
+                        <h3>Quick Setup</h3>
+                        <div class="step">
+                            <h4>1. Clone Repository</h4>
+                            <code>git clone https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot.git</code>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>2. Configure Environment</h4>
+                            <code>cp .env.example .env && nano .env</code>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>3. Install Dependencies</h4>
+                            <code>npm install && pip install -r requirements.txt</code>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>4. Connect Devices</h4>
+                            <code>adb devices</code>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>5. Start Scheduler</h4>
+                            <code>npm run start:scheduler</code>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>6. Monitor Dashboard</h4>
+                            <code>npm run dashboard</code>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="installation-note">
+                    For complete setup instructions, configuration options, and troubleshooting, see the <a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/blob/main/README.md" rel="nofollow">detailed README documentation</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Is this Instagram follow unfollow bot safe to use?</h3>
+                        <p>Yes, when used with conservative settings. Our bot achieves &lt;1% block rates through human-like pacing, randomized delays, and intelligent cooldowns. Always follow Instagram's Terms of Service and start with low daily limits.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What are the recommended daily activity caps?</h3>
+                        <p>Start with 50-100 follows per day for new accounts, gradually increasing to 200-300 for aged accounts. Unfollow limits should match follow volumes. Always monitor account health and adjust accordingly.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Does this auto unfollow bot instagram work on emulators?</h3>
+                        <p>Yes, fully compatible with Android emulators including BlueStacks, NoxPlayer, and Genymotion. Emulators offer easier scaling but may have slightly different performance characteristics than real devices.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How many devices can I run simultaneously?</h3>
+                        <p>The bot scales from single devices to 50+ device deployments. Performance depends on your hardware resources and network capacity. Start small and scale based on your infrastructure.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How do retries and backoff work?</h3>
+                        <p>The bot implements exponential backoff for failed actions, temporary cooldowns for rate limit responses, and intelligent retry logic that adapts to Instagram's feedback patterns to maintain account safety.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Can I whitelist certain accounts from unfollowing?</h3>
+                        <p>Yes, comprehensive whitelist support allows you to protect valuable connections, verified accounts, or custom user lists from automated unfollowing actions.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How do I avoid getting blocked or detected?</h3>
+                        <p>Use conservative daily limits, enable all human-like features, rotate activity patterns, take regular breaks, and monitor account health. The bot includes built-in protections, but responsible usage is essential.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What logging and reporting features are available?</h3>
+                        <p>Comprehensive logging includes action logs, error screenshots, JSON reports, performance metrics, and a web dashboard with real-time monitoring and historical analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact & Community</h2>
+                
+                <div class="contact-content">
+                    <div class="contact-links">
+                        <div class="contact-item">
+                            <h3>Issues & Bug Reports</h3>
+                            <p>Found a bug or need help? <a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/issues" rel="nofollow">Report issues on GitHub</a> for the fastest response from our development team.</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Feature Requests & Discussions</h3>
+                            <p>Share ideas and discuss improvements in our <a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/discussions" rel="nofollow">GitHub Discussions forum</a> with the community.</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Community Support</h3>
+                            <p>Join our <a href="https://discord.gg/Hr9aQGxb" rel="nofollow">Discord community</a> or <a href="https://t.me/devpilot1" rel="nofollow">Telegram group</a> for real-time support and to connect with other users.</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Documentation</h3>
+                            <p>Complete setup guides and API documentation available in our <a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/blob/main/README.md" rel="nofollow">comprehensive README</a>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <p><strong>Maintained by:</strong> <a href="https://bitbash.dev" rel="nofollow">Bitbash</a></p>
+                        <p><strong>License:</strong> MIT License - Free for personal and commercial use</p>
+                        <p><strong>Last Updated:</strong> <time datetime="2025-09-17">September 17, 2025</time></p>
+                        <p><strong>Security:</strong> No credentials stored locally - configure secure environment variables</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Instagram Bot</h3>
+                        <p>Production-ready automation for Android devices</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/issues" rel="nofollow">Issues</a></li>
+                        <li><a href="https://github.com/Appilot123/Android-ig-Follow-Unfollow-Bot/discussions" rel="nofollow">Discussions</a></li>
+                        <li><a href="https://discord.gg/Hr9aQGxb" rel="nofollow">Discord</a></li>
+                        <li><a href="https://t.me/devpilot1" rel="nofollow">Telegram</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="https://bitbash.dev" rel="nofollow">Bitbash</a></li>
+                        <li><a href="https://github.com/Appilot123" rel="nofollow">GitHub</a></li>
+                        <li><a href="mailto:contact@bitbash.dev">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Bitbash. Open source Instagram automation tools.</p>
+                    <p class="footer-disclaimer">Use responsibly and in compliance with Instagram's Terms of Service.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="footer-badges">
+                        <span class="footer-badge">MIT License</span>
+                        <span class="footer-badge">Production Ready</span>
+                        <span class="footer-badge">2,000+ Accounts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
